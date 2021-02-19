@@ -35,3 +35,15 @@ module.exports.logout = (request, response) => {
   response.clearCookie('token');
   response.sendStatus(200);
 };
+
+module.exports.getUserById = (request, response) => {
+  User.findOne({ _id: request.params.id })
+    .then(user => response.json(user))
+    .catch(error => response.status(400).json(error));
+};
+
+module.exports.updateUser = (request, response) => {
+  User.findOneAndUpdate({ _id: request.params.id }, request.body, { runValidators: true })
+    .then(user => response.json(user))
+    .catch(error => response.status(400).json(error));
+};
