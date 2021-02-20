@@ -36,7 +36,7 @@ const LoginForm = () => {
 
   return (
     <Box component="div" className="login-form-bg">
-      <Box component="div" className="login-form-overlay py-5">
+      <Box component="div" className="login-form-overlay">
         <Container maxWidth="sm" className="login-form py-5">
           {error && (
             <Box component="div" className="w-75 mx-auto">
@@ -51,7 +51,7 @@ const LoginForm = () => {
             className="w-75 mx-auto py-5"
             onSubmit={e => onSubmitHandler(e)}
           >
-            <h1 className="font-weight-bold mb-4">Sign In</h1>
+            <h3 className="font-weight-bold mb-4">Sign In</h3>
             <FormGroup className="mb-4">
               <TextField id="email" label="Email" onChange={e => setEmail(e.target.value)} />
             </FormGroup>
