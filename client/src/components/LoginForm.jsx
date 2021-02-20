@@ -9,24 +9,18 @@ import FormGroup from '@material-ui/core/FormGroup';
 import Button from '@material-ui/core/Button';
 import Link from '@material-ui/core/Link';
 import Alert from '@material-ui/lab/Alert';
-import '../styles/RegistrationForm.css';
+import '../styles/LoginForm.css';
 
-const RegistrationForm = () => {
-  const [firstName, setFirstName] = useState('');
-  const [lastName, setLastName] = useState('');
+const LoginForm = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
-  const [errors, setErrors] = useState([]);
+  const [error, setError] = useState('');
 
   const onSubmitHandler = e => {
     e.preventDefault();
 
     axios
-      .post(
-        'http://localhost:8000/api/register',
-        { firstName, lastName, email, password },
-        { withCredentials: true }
-      )
+      .post('http://localhost:8000/api/login', { email, password }, { withCredentials: true })
       .then(response => {
         const userId = response.data.userId;
 
@@ -35,27 +29,20 @@ const RegistrationForm = () => {
         navigate(`/profiles/${userId}`);
       })
       .catch(error => {
-        const errorResponse = error.response.data.errors;
-        const errorList = [];
-
-        for (const key of Object.keys(errorResponse)) {
-          errorList.push(errorResponse[key].message);
-        }
-        setErrors(errorList);
+        console.log(error);
+        setError('INVALID EMAIL OR PASSWORD!');
       });
   };
 
   return (
-    <Box component="div" className="reg-form-bg">
-      <Box component="div" className="reg-form-overlay py-5">
-        <Container maxWidth="sm" className="reg-form pt-5">
-          {errors.length > 0 && (
+    <Box component="div" className="login-form-bg">
+      <Box component="div" className="login-form-overlay py-5">
+        <Container maxWidth="sm" className="login-form pt-5">
+          {error && (
             <Box component="div" className="w-75 mx-auto">
-              {errors.map((error, idx) => (
-                <Alert severity="error" variant="outlined" className="mb-2" key={idx}>
-                  {error}
-                </Alert>
-              ))}
+              <Alert severity="error" variant="outlined" className="mb-2">
+                {error}
+              </Alert>
             </Box>
           )}
           <form
@@ -64,13 +51,7 @@ const RegistrationForm = () => {
             className="w-75 mx-auto pt-5"
             onSubmit={e => onSubmitHandler(e)}
           >
-            <h1 className="font-weight-bold mb-4">Sign Up</h1>
-            <FormGroup className="mb-4">
-              <TextField id="firstName" label="First Name" onChange={e => setFirstName(e.target.value)} />
-            </FormGroup>
-            <FormGroup className="mb-4">
-              <TextField id="lastName" label="Last Name" onChange={e => setLastName(e.target.value)} />
-            </FormGroup>
+            <h1 className="font-weight-bold mb-4">Sign In</h1>
             <FormGroup className="mb-4">
               <TextField id="email" label="Email" onChange={e => setEmail(e.target.value)} />
             </FormGroup>
@@ -78,12 +59,12 @@ const RegistrationForm = () => {
               <TextField id="password" label="Password" onChange={e => setPassword(e.target.value)} />
             </FormGroup>
             <Box component="div" className="mb-5">
-              <span className="text-muted">Already registered? </span>
-              <Link href="/login">login now</Link>
+              <span className="text-muted">Not registered yet? </span>
+              <Link href="/register">register now</Link>
             </Box>
             <Box component="div" className="text-right">
               <Button type="submit" variant="outlined" color="secondary" className="px-5 py-2">
-                Register
+                Login
               </Button>
             </Box>
           </form>
@@ -93,4 +74,4 @@ const RegistrationForm = () => {
   );
 };
 
-export default RegistrationForm;
+export default LoginForm;
