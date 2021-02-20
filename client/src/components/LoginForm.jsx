@@ -37,7 +37,7 @@ const LoginForm = () => {
   return (
     <Box component="div" className="login-form-bg">
       <Box component="div" className="login-form-overlay py-5">
-        <Container maxWidth="sm" className="login-form pt-5">
+        <Container maxWidth="sm" className="login-form py-5">
           {error && (
             <Box component="div" className="w-75 mx-auto">
               <Alert severity="error" variant="outlined" className="mb-2">
@@ -48,7 +48,7 @@ const LoginForm = () => {
           <form
             noValidate
             autoComplete="off"
-            className="w-75 mx-auto pt-5"
+            className="w-75 mx-auto py-5"
             onSubmit={e => onSubmitHandler(e)}
           >
             <h1 className="font-weight-bold mb-4">Sign In</h1>
