@@ -56,7 +56,7 @@ const LoginForm = () => {
               <TextField id="email" label="Email" onChange={e => setEmail(e.target.value)} />
             </FormGroup>
             <FormGroup className="mb-4">
-              <TextField id="password" label="Password" onChange={e => setPassword(e.target.value)} />
+              <TextField type="password" id="password" label="Password" onChange={e => setPassword(e.target.value)} />
             </FormGroup>
             <Box component="div" className="mb-5">
               <span className="text-muted">Not registered yet? </span>

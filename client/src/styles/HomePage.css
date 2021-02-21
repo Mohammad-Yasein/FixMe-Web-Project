@@ -1,0 +1,21 @@
+.main-bg {
+    background: url('../assets/imgs/main-bg.jpg') no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+  }
+
+  .main-overlay {
+    background-color: rgba(0, 0, 0, 0.65);
+    min-height: 100vh;
+    padding: 10rem 0;
+  }
+  
+  .main {
+    /* background-color: rgba(200, 200, 200, 0.75);
+    
+    height: 100%; */
+    border-radius: 0.75rem;
+    background-color: rgba(200, 200, 200, 0.75); 
+    padding: 10px;
+  }
+  
