@@ -8,6 +8,9 @@ const ArticleSchema = new mongoose.Schema(
     author: {
       type: String,
     },
+    publishedIn: {
+      type: String,
+    },
     content: {
       type: String,
     },

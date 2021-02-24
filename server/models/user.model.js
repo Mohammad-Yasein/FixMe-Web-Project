@@ -29,6 +29,18 @@ const UserSchema = new mongoose.Schema(
       required: [true, 'PASSWORD IS REQUIRED!'],
       minLength: [8, 'PASSWORD MUST BE AT LEAST EIGHT CHARACTERS LONG!'],
     },
+    gender: {
+      type: String,
+    },
+    age: {
+      type: Number,
+    },
+    weight: {
+      type: Number,
+    },
+    height: {
+      type: Number,
+    },
   },
   { timestamps: true }
 );
