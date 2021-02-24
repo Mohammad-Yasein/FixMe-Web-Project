@@ -41,7 +41,12 @@ const HomePage = () => {
           <p style={{ fontSize: '20px' }} className="text-justify mb-5">
           FixMe is a platform specialized in providing up-to-date advice on fitness and nutrition. 
           You can browse through our well-written and highly-informative health articles, as well as our high-quality workout guides. 
-          You can get customized meal and workout plans based on your body measurements. Stay healthy and enjoy using FixMe!
+          You can get customized meal and workout plans based on your body measurements. Stay healthy and enjoy using FixMe.
+          <br/><br/>
+          This website has contributed to the well-being of many people, whether it was for weight-gain, weight-loss, muscle-gain or strength.  
+          You can be an absolute beginner with zero experience, or a professional athlete looking to reach your true potential, we can help!
+          <br/><br/>
+          Get your measurments and start your journey to health. Remember don't eat less, eat right!
           </p>
           <h1 className="intro text-danger text-lg-left text-center">Health Articles</h1>
           <Grid container>
@@ -126,14 +131,14 @@ const HomePage = () => {
                     }}
                   >
                     <Typography gutterBottom variant="h5" component="h2">
-                      Trainer
+                    Nutritionist
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                      <div>Lorem, ipsum.</div>
+                      <div>Mahmoud Waked</div>
                       <div>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos eaque, quia saepe dicta
-                        sequi facere, tenetur ut doloremque illum perferendis maiores ducimus vel voluptatum
-                        aliquid eum? Magnam optio architecto eveniet!
+                        Mahmoud is a qualified Clinical Nutritionist. He has well-rounded experience working with 
+                        people of different needs. He provides professional and scientifically-proven nutritional advice and meal-plans. 
+                        Mahmoud believes in safety and steers away from trendy diets.
                       </div>
                     </Typography>
                   </CardContent>
