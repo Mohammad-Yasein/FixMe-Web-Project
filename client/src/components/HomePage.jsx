@@ -1,141 +1,155 @@
-import React from 'react'
-import ReactPlayer from "react-player"
-import { makeStyles } from '@material-ui/core/styles';
-import { Link, navigate } from '@reach/router';
-import Card from '@material-ui/core/Card';
+import React, { useState, useEffect } from 'react';
+import { navigate } from '@reach/router';
+import axios from 'axios';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
+import Grid from '@material-ui/core/Grid';
+import Card from '@material-ui/core/Card';
+import CardActionArea from '@material-ui/core/CardActionArea';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Avatar from 'react-avatar';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
 import '../styles/HomePage.css';
+import siteAd from '../assets/videos/home.mp4';
 
-// import Image from 'material-ui-image'
-
-// import CardActionArea from '@material-ui/core/CardActionArea';
-// import CardActions from '@material-ui/core/CardActions';
-// import CardContent from '@material-ui/core/CardContent';
-// import Button from '@material-ui/core/Button';
-// import Typography from '@material-ui/core/Typography';
-
-
-const useStyles = makeStyles({
-  root: {
-    maxWidth: 700,
-    marginBottom: 30
-  },
-});
 const HomePage = () => {
-  const classes = useStyles();
+  const [articles, setArticles] = useState([]);
+
+  useEffect(() => {
+    document.title = 'Welcome to FixMe Fitness';
+    axios
+      .get('http://localhost:8000/api/articles')
+      .then(response => {
+        console.log(response.data);
+        setArticles(response.data);
+      })
+      .catch(error => {
+        console.log(error.response.data);
+      });
+  }, []);
+
   return (
-    <Box component="div" className="main-bg">
-      <Box component="div" className="main-overlay">
-        <center>
-          <ReactPlayer
-            url="https://www.youtube.com/watch?v=wtFPIOV2bWM"
-            // autoPlay={true}
-            // muted={true}
-            // loop={false} 
-            playing
-            muted
-            config={{ file: { attributes: {autoPlay: true,muted: true} } }}
-          /> 
-          <hr></hr>
-        </center>
-        <Container className="main">
-          <div>
-            <h2>Be Fit With Us!</h2>
-            <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-            <hr></hr>
-          </div>
-          <div>
-            <center>
-              <Card className={classes.root}>
-                {/* <Card> */}
-                {/* <CardActionArea> */}
+    <Box component="div" className="home-bg">
+      <Box component="div" className="home-overlay">
+        <video autoPlay loop muted className="home-video">
+          <source src={siteAd} type="video/mp4" />
+        </video>
+        <Container maxWidth="lg" className="home p-5">
+          <h1 className="intro text-danger text-lg-left text-center">BE FiT</h1>
+          <p style={{ fontSize: '20px' }} className="text-justify mb-5">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat vel officiis asperiores
+            repellendus eum in laudantium ipsa, recusandae provident ad modi impedit eius error ducimus fugit
+            rem maxime et saepe quidem. Aut, itaque, nobis ipsam similique repellat unde, fugit sint dolorum
+            fuga eaque voluptatum nam tempore cumque facilis corrupti. Veniam possimus amet quidem consectetur
+            provident dolore saepe. Amet eaque animi blanditiis dolores consequatur corporis ea odit maxime ex
+            incidunt molestias provident nesciunt, nulla distinctio architecto perferendis dicta. Natus
+            quisquam nihil, perspiciatis consequatur aliquid exercitationem vero voluptas. Natus dolor quod
+            suscipit sed earum veniam doloribus maxime quasi. Eos perspiciatis ipsum suscipit.
+          </p>
+          <h1 className="intro text-danger text-lg-left text-center">Health Articles</h1>
+          <Grid container>
+            {articles.length > 0 &&
+              articles.map((article, idx) => {
+                return (
+                  <React.Fragment key={idx}>
+                    <Grid item lg={4} md={12} sm={12} xs={12} className="px-2">
+                      <Card className="mb-4">
+                        <CardActionArea>
+                          <CardMedia image={`../imgs/${article.title}.jpg`} style={{ height: '150px' }} />
+                          <CardContent style={{ height: '175px' }}>
+                            <Typography gutterBottom variant="h5" component="h2">
+                              {article.title}
+                            </Typography>
+                            <Typography variant="body2" color="textSecondary" component="p">
+                              <div>{article.author}</div>
+                              <div>{article.publishedIn}</div>
+                            </Typography>
+                          </CardContent>
+                        </CardActionArea>
+                        <CardActions>
+                          <Button
+                            size="small"
+                            color="primary"
+                            onClick={() => navigate(`/articles/${article._id}`)}
+                          >
+                            Learn More
+                          </Button>
+                        </CardActions>
+                      </Card>
+                    </Grid>
+                  </React.Fragment>
+                );
+              })}
+          </Grid>
+          <h1 className="intro text-primary text-center mb-5">Our Trainers</h1>
+          <Grid container>
+            <Grid item lg={6} md={12} sm={12} xs={12} className="px-2">
+              <Card className="mb-4" style={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
+                <CardActionArea>
                   <CardMedia
-                    component="img"
-                    alt="First Image"
-                    height="200"
-                    maxWidth="200"
-                    image="http://www.likecovers.com/covers/original/bro-do-you-lift.jpg?i"
-                    title="First Image"
+                    image="../imgs/trainer1.jpg"
+                    style={{ height: '150px', borderRadius: '50%', margin: '10px 37%' }}
                   />
-                  {/* <CardContent>
+                  <CardContent
+                    style={{
+                      backgroundColor: 'white',
+                      borderRadius: '5px',
+                      height: '175px',
+                      textAlign: 'center',
+                    }}
+                  >
                     <Typography gutterBottom variant="h5" component="h2">
-                      Lizard
+                      Trainer
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                      Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-                      across all continents except Antarctica
+                      <div>Lorem, ipsum.</div>
+                      <div>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos eaque, quia saepe dicta
+                        sequi facere, tenetur ut doloremque illum perferendis maiores ducimus vel voluptatum
+                        aliquid eum? Magnam optio architecto eveniet!
+                      </div>
                     </Typography>
-                  </CardContent> */}
-                {/* </CardActionArea> */}
-                {/* <CardActions>
-                  <Button size="small" color="primary">
-                    Share
-                  </Button>
-                  <Button size="small" color="primary">
-                    Learn More
-                  </Button>
-                </CardActions> */}
+                  </CardContent>
+                </CardActionArea>
               </Card>
-            </center>
-          </div>
-          <div style={{paddingLeft: "50px", paddingRight: "50px"}}>
-            <div style={{display:'inline-block', width:"500px"}}>
-              <CardMedia
-                component="img"
-                alt="First Image"
-                height="300"
-                image="https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/salad-mix-plate-shot-from-above-on-rustic-wooden-royalty-free-image-1018199524-1556130377.jpg?crop=0.66635xw:1xh;center,top&resize=768:*"
-                title="First Image"
-              />
-            </div>
-            <div style={{display:'inline-block', width:"500px", float:"right"}}>
-              <CardMedia
-                component="img"
-                alt="First Image"
-                height="300"
-                image="https://gabrielefitness.com/wp-content/uploads/2019/05/testimonials-bg.jpg"
-                title="First Image"
-              />
-            </div>
-            <hr></hr>
-          </div>
-          <div>
-            <h2>Topics</h2>
-            <div style={{display: 'inline-block', width: '500px'}}>
-              <h4>Some text 1</h4>
-              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              <Link to='/login'>Read More ...</Link>
-            </div>
-            <div style={{display: 'inline-block', width: '500px', float:'right'}}>
-              <h4>Some text 2</h4>
-              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              <a href={'/'}>Read More...</a>
-            </div>
-            <hr></hr>
-          </div>
-          <div>
-            <center>
-              <h2>Our Trainers</h2>
-              <div style={{display: 'inline-block', width: '500px'}}>
-                <h3>Trainer 1</h3>
-                <Avatar alt="Trainer 1" src="https://onedesign.bg/wp-content/uploads/2016/05/our-team-4-1.jpg" />
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-              </div>
-              <div style={{display: 'inline-block', width: '500px', float:'right'}}>
-                <h3>Trainer 2</h3>
-                <Avatar alt="Trainer 2" src="https://www.praxistraining.be/images/Wantedtrainer.jpg" />
-                <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-              </div>
-              <hr></hr>
-            </center>
-          </div>
+            </Grid>
+            <Grid item lg={6} md={12} sm={12} xs={12} className="px-2">
+              <Card className="mb-4" style={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
+                <CardActionArea>
+                  <CardMedia
+                    image="../imgs/trainer1.jpg"
+                    style={{ height: '150px', borderRadius: '50%', margin: '10px 37%' }}
+                  />
+                  <CardContent
+                    style={{
+                      backgroundColor: 'white',
+                      borderRadius: '5px',
+                      height: '175px',
+                      textAlign: 'center',
+                    }}
+                  >
+                    <Typography gutterBottom variant="h5" component="h2">
+                      Trainer
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p">
+                      <div>Lorem, ipsum.</div>
+                      <div>
+                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos eaque, quia saepe dicta
+                        sequi facere, tenetur ut doloremque illum perferendis maiores ducimus vel voluptatum
+                        aliquid eum? Magnam optio architecto eveniet!
+                      </div>
+                    </Typography>
+                  </CardContent>
+                </CardActionArea>
+              </Card>
+            </Grid>
+          </Grid>
         </Container>
       </Box>
     </Box>
   );
 };
 
-export default HomePage
+export default HomePage;
