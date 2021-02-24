@@ -1,0 +1,143 @@
+[
+  {
+    "workouts": [
+      { "Type": "Chest" },
+      { "Flat bench barbell press": "4 sets, 8 – 12 reps" },
+      { "Incline dumbbell press": "4 sets, 8 – 12 reps" },
+      { "Incline dumbbell flyes": "3 sets, 10 reps" },
+      { "Cable crossovers": "3 sets, 15 reps" },
+      { "Push-ups": "4 sets, 20 reps" }
+    ],
+    "meals": [
+      {
+        "Breakfast": "Peanut Butter on Wholegrain Toast: Toasted wholegrain bread+ 2 tbsp peanut butter. Drizzle with honey to taste. Serve with 1 hot chocolate, made with milk + 1 serve of fruit (eg. 1 medium pear or orange)"
+      },
+      {
+        "Lunch": "Chicken and Pasta Salad: Cooked chicken + pasta + 1 cup leafy green vegetables (eg. spinach, rocket) + tomato + avocado + crumbled feta cheese + olive oil/vinegar dressing"
+      },
+      {
+        "Dinner": "Lamb Chops and Vegetables: Lamb chop, trimmed & shallow fried in olive oil. Serve with sweet potato mash made with milk and olive oil + 2 cups cooked vegetables"
+      },
+      {
+        "Dessert": "Fresh Fruit and Cheese Platter: Slice and serve a variety of fresh fruits in season and cheese"
+      },
+      { "Snack": "A handful of mixed nuts and/or seeds" }
+    ]
+  },
+  {
+    "workouts": [
+      { "Type": "Shoulders" },
+      { "Seated dumbbell shoulder press": "4 sets, 12 reps" },
+      { "Standing barbell military press": "4 sets, 10 - 12 reps" },
+      { "Dumbbell lateral raises": "4 sets, 12 reps" },
+      { "Rear deltoid flyes": "3 sets, 15 reps" },
+      { "EZ bar upright rows": "4 sets, 15 reps" },
+      { "Dumbbell front raises": "4 sets, 12 reps" }
+    ],
+    "meals": [
+      {
+        "Breakfast": "Chia Porridge with Fruit: 2 tbsp chia seeds + rolled oats + 1.5 cup full cream milk + 1 serve of fruit (eg. 1 medium banana or 6 dried prunes)"
+      },
+      {
+        "Lunch": "Egg, Cheese and Salad Wrap: 2 boiled & mashed eggs + 2 cheese slices + avocado + 1 cup salad vegetables (eg. lettuce, cucumber, carrot, capsicum) rolled up in tortilla bread (make 2 wraps) + 1 cup fruit juice"
+      },
+      {
+        "Dinner": "Baked Salmon, Cous Cous and Vegetables: Oven baked salmon fillet, sprinkled with sesame oil and sesame seeds + wholemeal cous cous + 2 cups cooked vegetables. Serve with hommus"
+      },
+      { "Dessert": "Fruit Salad Dessert: Fresh fruit salad with ice cream" },
+      { "Snack": "A handful of mixed nuts and/or seeds. Fruit toast with butter and/or jam" }
+    ]
+  },
+  {
+    "workouts": [
+      { "Type": "Legs" },
+      { "Barbell squats": "4 sets, 8 – 10 reps" },
+      { "Hack squatss": "4 sets, 10 reps" },
+      { "Leg press machine": "3 sets, 10 reps" },
+      { "Leg extension machine": "3 sets, 10 reps" },
+      { "Hamstring curls": "3 sets, 10 reps" },
+      { "Calf raises": "3 sets, 20 reps" }
+    ],
+    "meals": [
+      {
+        "Breakfast": "Sweet Potato Spanish Omelette (1 serve): Serve with 1 cafe latte or hot chocolate made with full cream milk"
+      },
+      {
+        "Lunch": "Lentil, Vegetables and Barley Soup: Lentils with 1 cup chopped vegetables (eg. carrot, pumpkin, celery, onion), vegetable stock and barley. Serve with dollop of natural yoghurt. + 1 serve of fruit"
+      },
+      {
+        "Dinner": "Spaghetti Bolognese: Lean mince with tomato, tomato puree, herbs & garlic served on spaghetti and sprinkled with cheese + 1 cup salad (eg. baby spinach, carrots, cucumber) with olive oil based dressing"
+      },
+      {
+        "Dessert": "Fruit Smoothie: Made with 1 cup milk + 1 tbsp walnuts + fruit (eg. a small mango or berries)"
+      },
+      { "Snack": "20g cheese + Canned tuna in oil on wholegrain crackers" }
+    ]
+  },
+  {
+    "workouts": [
+      { "Type": "Back and Abs" },
+      { "Chin-ups": "4 sets, 10 reps" },
+      { "Wide grip lat pull-downs": "4 sets, 12 reps" },
+      { "Close grip lat pull-downs": "4 sets, 12 reps" },
+      { "Barbell bent over rows": "4 sets, 8 reps" },
+      { "Dumbbell rows": "4 sets, 8 – 10 reps per arm" },
+      { "Hyperextensions": "4 sets to failure" }
+    ],
+    "meals": [
+      {
+        "Breakfast": "Wholegrain Cereal with Milk and Fruit: Wholegrain flaky cereal + full cream milk + 2 tbsp linseeds + 1 serve of fruit (eg. 6 dried apricot halves or 4 small plums)"
+      },
+      {
+        "Lunch": "Chicken and Noodle Stir-fry: Sliced lean chicken + Hokkein noodles + 1 cup vegetables (eg. beans, capsicum, spinach, carrot) cooked in sesame oil + sweet soy sauce dressing. Sprinkle with sesame seeds"
+      },
+      { "Dinner": "Nasi Goreng Tray Bake (1 serve): Serve with 2 cup mixed salad vegetables" },
+      { "Dessert": "Fruit Pop: Made with frozen fruits (eg. bananas or mangos) with Greek yoghurt" },
+      {
+        "Snack": "1 serve of fruit (eg. 5 prunes or 1 cup fresh fruit salad). 1 cup hot chocolate made with full cream milk"
+      }
+    ]
+  },
+  {
+    "workouts": [
+      { "Type": "Arms (biceps, triceps)" },
+      { "Double arm dumbbell curls": "4 sets, 10 - 12 reps" },
+      { "EZ bar curls": "4 sets, 10 reps" },
+      { "Preacher curl machine": "4 sets, 12 reps" },
+      { "Triceps rope pushdowns": "4 sets, 15 reps" },
+      { "Overhead triceps rope extensions": "4 sets, 15 reps" },
+      { "Skull crushers": "4 sets, 10 reps" }
+    ],
+    "meals": [
+      {
+        "Breakfast": "Poached Eggs with Sauteed Field Mushroom and Avocado (1 serve): Serve with 1 cafe latte or hot chocolate made with full cream milk"
+      },
+      {
+        "Lunch": "Fish and Chips: Dip fish fillets in flour, egg then breadcrumbs and shallow fry in canola oil. Serve with homemade thick potato chunky chips, lemon wedges and 2 cups mixed salad vegetables with olive oil dressing. + 1 serve of fruit"
+      },
+      {
+        "Dinner": "Mango Chicken and Corn: Grilled chicken thighs served with mango salsa, corn on the cob & 1.5 cups baked vegetables (eg. carrot, onion, beans) in olive oil"
+      },
+      {
+        "Dessert": "Yoghurt Parfait: Layer 1 tub of yoghurt and muesli/rolled oats in tall serving glasses. Top with handful of mixed nuts and/or seeds"
+      },
+      { "Snack": "Banana slices + ricotta cheese + nut butter on toast" }
+    ]
+  },
+  {
+    "workouts": [{ "Type": "Cardio" }, { "Steady state cardio": "60 minutes" }],
+    "meals": [
+      { "Breakfast": "Bechamel Spinach Baked Egg (1 serve): Serve with 1 café latte" },
+      {
+        "Lunch": "Beef and Noodle Soup: Thinly sliced beef + fresh flat rice noodles + 1 cup vegetables (eg. bean sprouts, carrot, broccoli) cooked in vegetable stock. Sprinkle with diced green onion. + 1 serve of fruit (eg. 1 medium apple or banana)"
+      },
+      {
+        "Dinner": "Pork Roast and Vegetables: Lean pork roast + baked potato + 1.5 cups baked vegetables + olive oil (for cooking)"
+      },
+      {
+        "Dessert": "Fruit Crepe: Sliced fruit and ricotta cheese wrapped in crepe. Drizzle with syrup or honey to taste"
+      },
+      { "Snack": "1 tub yoghurt. A handful of mixed nuts and/or seeds" }
+    ]
+  }
+]
