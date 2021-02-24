@@ -9,7 +9,11 @@ module.exports.register = (request, response) => {
 
       response
         .cookie('token', userToken, { httpOnly: true })
-        .json({ message: 'SUCCESSFULLY REGISTERED!', userId: user._id });
+        .json({
+          message: 'SUCCESSFULLY REGISTERED!',
+          userId: user._id,
+          username: `${user.firstName} ${user.lastName}`,
+        });
     })
     .catch(error => response.status(400).json(error));
 };
@@ -26,9 +30,11 @@ module.exports.login = async (request, response) => {
 
   const userToken = jwt.sign({ id: user._id }, process.env.SECRET_KEY);
 
-  response
-    .cookie('token', userToken, { httpOnly: true })
-    .json({ message: 'SUCCESSFULLY LOGGED!', userId: user._id });
+  response.cookie('token', userToken, { httpOnly: true }).json({
+    message: 'SUCCESSFULLY LOGGED!',
+    userId: user._id,
+    username: `${user.firstName} ${user.lastName}`,
+  });
 };
 
 module.exports.logout = (request, response) => {
