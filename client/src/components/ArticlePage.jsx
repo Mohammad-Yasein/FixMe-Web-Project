@@ -81,7 +81,18 @@ const ArticlePage = props => {
                         <Avatar alt="Remy Sharp" src="../imgs/user-avatar.svg" />
                       </ListItemAvatar>
                       <ListItemText
-                        primary={`By ${comment.username}`}
+                        primary={
+                          <React.Fragment>
+                            <Typography
+                              component="span"
+                              variant="h6"
+                              className="d-inline"
+                              color="textPrimary"
+                            >
+                              {`${comment.comment}`}
+                            </Typography>
+                          </React.Fragment>
+                        }
                         secondary={
                           <React.Fragment>
                             <Typography
@@ -90,9 +101,10 @@ const ArticlePage = props => {
                               className="d-inline"
                               color="textPrimary"
                             >
-                              {`At ${comment.postedAt}`}
+                              {`By ${comment.username}`}
                             </Typography>
-                            {` — ${comment.comment}`}
+                            <br />
+                            {`At ${comment.postedAt}`}
                           </React.Fragment>
                         }
                       />

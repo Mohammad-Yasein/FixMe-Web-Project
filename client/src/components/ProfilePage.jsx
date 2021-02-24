@@ -6,6 +6,10 @@ import 'react-circular-progressbar/dist/styles.css';
 import Container from '@material-ui/core/Container';
 import Box from '@material-ui/core/Box';
 import TextField from '@material-ui/core/TextField';
+import Select from '@material-ui/core/Select';
+import MenuItem from '@material-ui/core/MenuItem';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import InputLabel from '@material-ui/core/InputLabel';
 import FormGroup from '@material-ui/core/FormGroup';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
@@ -95,27 +99,40 @@ const ProfilePage = () => {
                 onSubmit={e => onSubmitHandler(e)}
               >
                 <h2>{sessionStorage.getItem('username')}</h2>
-                <p>Fill your information to get your plan</p>
+                <p className="mb-4">Fill your information to get your plan</p>
                 <FormGroup className="mb-4">
-                  <TextField id="gender" label="Gender" onChange={e => setGender(e.target.value)} />
+                  <InputLabel>Gender</InputLabel>
+                  <Select id="gender" value={gender} onChange={e => setGender(e.target.value)}>
+                    <MenuItem value="male">Male</MenuItem>
+                    <MenuItem value="female">Female</MenuItem>
+                  </Select>
                 </FormGroup>
                 <FormGroup className="mb-4">
-                  <TextField type="number" id="age" label="Age" onChange={e => setAge(e.target.value)} />
+                  <InputLabel>Age</InputLabel>
+                  <TextField type="number" id="age" value={age} onChange={e => setAge(e.target.value)} />
                 </FormGroup>
                 <FormGroup className="mb-4">
+                  <InputLabel>Weight</InputLabel>
                   <TextField
                     type="number"
                     id="weight"
-                    label="Weight"
+                    value={weight}
+                    InputProps={{
+                      endAdornment: <InputAdornment position="end">Kg</InputAdornment>,
+                    }}
                     onChange={e => setWeight(e.target.value)}
                   />
                 </FormGroup>
                 <FormGroup className="mb-4">
+                  <InputLabel>Height</InputLabel>
                   <TextField
                     type="number"
                     id="height"
-                    label="Height"
-                    onChange={e => setHeight(e.target.value)}
+                    value={height * 100}
+                    InputProps={{
+                      endAdornment: <InputAdornment position="end">cm</InputAdornment>,
+                    }}
+                    onChange={e => setHeight(e.target.value / 100)}
                   />
                 </FormGroup>
                 <Box component="div" className="text-right">
@@ -125,11 +142,11 @@ const ProfilePage = () => {
                 </Box>
               </form>
             </Grid>
-            {results.bmi && (
+            {!results.bmi || (
               <Grid item lg={6} md={12} sm={12} xs={12} className="px-5 py-5">
                 <Grid container>
                   <Grid item xs={6}>
-                    <div className="text-center px-3">
+                    <div className="text-center px-2">
                       <ChangingProgressProvider values={[0, Math.round(results.bmi)]}>
                         {percentage => (
                           <CircularProgressbar
@@ -157,7 +174,7 @@ const ProfilePage = () => {
                         )}
                       </ChangingProgressProvider>
                       <div className="mt-4">
-                        <h6 className="font-weight-bold">BMI Body Mass Index</h6>
+                        <h6 className="font-weight-bold">Body Mass Index (BMI)</h6>
                         <h5
                           className={`font-weight-bold ${
                             results.bmi < 18.5
@@ -175,7 +192,7 @@ const ProfilePage = () => {
                     </div>
                   </Grid>
                   <Grid item xs={6}>
-                    <div className="text-center px-3">
+                    <div className="text-center px-2">
                       <ChangingProgressProvider values={[0, Math.round(results.bf)]}>
                         {percentage => (
                           <CircularProgressbar
@@ -220,7 +237,7 @@ const ProfilePage = () => {
                         )}
                       </ChangingProgressProvider>
                       <div className="mt-4">
-                        <h6 className="font-weight-bold">BFP Body Fat Percentage</h6>
+                        <h6 className="font-weight-bold">Body Fat Percentage (BFP)</h6>
                         <h5
                           className={`font-weight-bold ${
                             gender == 'female'
@@ -249,7 +266,7 @@ const ProfilePage = () => {
                 <div className="text-center mt-5">
                   {results.bmi < 25 ? (
                     <>
-                      <h1 className="user-plan text-danger">Gain Weight Plan</h1>
+                      <h1 className="user-plan text-danger">Weight Gain Plan</h1>
                       <Link
                         component="button"
                         onClick={() => {
@@ -257,12 +274,12 @@ const ProfilePage = () => {
                           setData(gainData);
                         }}
                       >
-                        check your plan
+                        Get your plan!
                       </Link>
                     </>
                   ) : (
                     <>
-                      <h1 className="user-plan text-danger">Lose Weight Plan</h1>
+                      <h1 className="user-plan text-danger">Weight Loss Plan</h1>
                       <Link
                         component="button"
                         onClick={() => {
@@ -270,7 +287,7 @@ const ProfilePage = () => {
                           setData(loseData);
                         }}
                       >
-                        check your plan
+                        Get your plan!
                       </Link>
                     </>
                   )}
@@ -288,10 +305,10 @@ const ProfilePage = () => {
                         <h6 className="font-weight-bold">{`DAY ${idx + 1}`}</h6>
                       </AccordionSummary>
                       <AccordionDetails>
-                        <ul class="nav nav-tabs w-100">
-                          <li class="nav-item">
+                        <ul className="nav nav-tabs w-100">
+                          <li className="nav-item">
                             <button
-                              class={`nav-link${isActive ? ' active' : ''} px-5`}
+                              className={`nav-link${isActive ? ' active' : ''} px-5`}
                               onClick={() => {
                                 setIsActive(true);
                               }}
@@ -299,9 +316,9 @@ const ProfilePage = () => {
                               Meals
                             </button>
                           </li>
-                          <li class="nav-item">
+                          <li className="nav-item">
                             <button
-                              class={`nav-link${!isActive ? ' active' : ''} px-5`}
+                              className={`nav-link${!isActive ? ' active' : ''} px-5`}
                               onClick={() => {
                                 setIsActive(false);
                               }}
