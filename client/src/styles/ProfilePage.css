@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+.profile-bg {
+  background: url('../assets/imgs/profile-bg.jpg') center no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+.profile-overlay {
+  background-color: rgba(0, 0, 0, 0.65);
+  min-height: 100vh;
+  padding: 10rem 0;
+}
+
+.profile {
+  background-color: rgba(255, 255, 255, 0.85);
+  border-radius: 0.75rem;
+  height: 100%;
+}
+
+.scale-img {
+  border-radius: 10px;
+  display: block;
+  width: 100%;
+}
+
+.user-plan {
+  font-family: 'Anton', sans-serif;
+}
