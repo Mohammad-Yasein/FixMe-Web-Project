@@ -47,7 +47,7 @@ The team members demonstrated amazing team-work skills, highly-professional work
 ![](fixme-register.gif)
 
 
-**Profile section: Add measurments and view meal & workout plan**
+**Profile section: Add measurements and view meal & workout plan**
 ![](profile-meal-and-workout-plans.gif)
 
 
