@@ -34,4 +34,4 @@ React, MongoDB, Socket.io, Material UI, Express, Node.js.
 **Message from the developers:**
 
 We are incredibly proud of this project, as we managed to work under great uncertinanty due to having two team members being affected by covid-19. 
-The team members demonstrated amazing team-work skills, highly-professional work ethics. All in all, each one of us recognizes the great value this project has allowed us to get.
+The team members demonstrated amazing team-work skills, highly-professional work ethics. All in all, each one of us recognizes the great value this project has allowed us to get and are glad to have worked together.
