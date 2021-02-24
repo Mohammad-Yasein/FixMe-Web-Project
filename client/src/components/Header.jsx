@@ -1,5 +1,6 @@
 import React from 'react';
-import { navigate } from '@reach/router';
+import axios from 'axios';
+import { Link, navigate } from '@reach/router';
 import clsx from 'clsx';
 import { makeStyles, useTheme } from '@material-ui/core/styles';
 import Drawer from '@material-ui/core/Drawer';
@@ -22,15 +23,16 @@ import AccountCircleOutlined from '@material-ui/icons/AccountCircleOutlined';
 import LockOpenOutlined from '@material-ui/icons/LockOpenOutlined';
 import LockOutlined from '@material-ui/icons/LockOutlined';
 import BorderColorOutlined from '@material-ui/icons/BorderColorOutlined';
+import '../styles/Header.css';
 
-const drawerWidth = 240;
+const drawerWidth = 300;
 
 const useStyles = makeStyles(theme => ({
   root: {
     display: 'flex',
   },
   appBar: {
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
     boxShadow: 'none',
     transition: theme.transitions.create(['margin', 'width'], {
       easing: theme.transitions.easing.sharp,
@@ -56,7 +58,9 @@ const useStyles = makeStyles(theme => ({
     flexShrink: 0,
   },
   drawerPaper: {
-    backgroundColor: 'rgba(255, 255, 255, 0.75)',
+    backgroundColor: 'rgba(0, 0, 0, 0.6)',
+    borderLeft: '2px solid rgba(60, 60, 60, 0.6)',
+    color: '#ddd',
     width: drawerWidth,
   },
   drawerHeader: {
@@ -97,6 +101,16 @@ const Header = () => {
     setOpen(false);
   };
 
+  const handleLogout = () => {
+    axios
+      .get('http://localhost:8000/api/logout', { withCredentials: true })
+      .then(response => {
+        sessionStorage.clear();
+        navigate('/');
+      })
+      .catch(error => console.log(error.response.data));
+  };
+
   return (
     <div className={classes.root}>
       <CssBaseline />
@@ -107,8 +121,11 @@ const Header = () => {
         })}
       >
         <Toolbar>
-          <Typography variant="h5" noWrap className={classes.title}>
-            FixMe
+          <Typography noWrap variant="h5" className={classes.title}>
+            <a href="/">
+              <img src="../imgs/logo.png" alt="FixMe Logo" height="75px" className="py-2" />
+            </a>
+            <span className="web-title ml-2">FixMe Fitness</span>
           </Typography>
           <IconButton
             color="inherit"
@@ -132,10 +149,14 @@ const Header = () => {
       >
         <div className={classes.drawerHeader}>
           <IconButton onClick={handleDrawerClose}>
-            {theme.direction === 'rtl' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
+            {theme.direction === 'rtl' ? (
+              <ChevronLeftIcon style={{ color: '#aaa' }} />
+            ) : (
+              <ChevronRightIcon style={{ color: '#aaa' }} />
+            )}
           </IconButton>
         </div>
-        <Divider />
+        <Divider variant="middle" style={{ backgroundColor: '#666' }} />
         <List>
           <ListItem
             button
@@ -145,7 +166,7 @@ const Header = () => {
             }}
           >
             <ListItemIcon>
-              <HomeOutlined />
+              <HomeOutlined style={{ color: '#aaa' }} />
             </ListItemIcon>
             <ListItemText primary="Home" />
           </ListItem>
@@ -157,59 +178,67 @@ const Header = () => {
             }}
           >
             <ListItemIcon>
-              <DescriptionOutlined />
+              <DescriptionOutlined style={{ color: '#aaa' }} />
             </ListItemIcon>
             <ListItemText primary="Articles" />
           </ListItem>
-          <Divider className="my-4" />
-          <ListItem
-            button
-            onClick={() => {
-              handleDrawerClose();
-              navigate('/register');
-            }}
-          >
-            <ListItemIcon>
-              <BorderColorOutlined />
-            </ListItemIcon>
-            <ListItemText primary="Register" />
-          </ListItem>
-          <ListItem
-            button
-            onClick={() => {
-              handleDrawerClose();
-              navigate('/login');
-            }}
-          >
-            <ListItemIcon>
-              <LockOpenOutlined />
-            </ListItemIcon>
-            <ListItemText primary="Login" />
-          </ListItem>
-          <ListItem
-            button
-            onClick={() => {
-              handleDrawerClose();
-              navigate('/profiles/:id');
-            }}
-          >
-            <ListItemIcon>
-              <AccountCircleOutlined />
-            </ListItemIcon>
-            <ListItemText primary="Profile" />
-          </ListItem>
-          <ListItem
-            button
-            onClick={() => {
-              handleDrawerClose();
-              navigate('/logout');
-            }}
-          >
-            <ListItemIcon>
-              <LockOutlined />
-            </ListItemIcon>
-            <ListItemText primary="Logout" />
-          </ListItem>
+          <Divider variant="middle" style={{ backgroundColor: '#666' }} className="my-4" />
+          {!sessionStorage.getItem('userId') && (
+            <>
+              <ListItem
+                button
+                onClick={() => {
+                  handleDrawerClose();
+                  navigate('/register');
+                }}
+              >
+                <ListItemIcon>
+                  <BorderColorOutlined style={{ color: '#aaa' }} />
+                </ListItemIcon>
+                <ListItemText primary="Register" />
+              </ListItem>
+              <ListItem
+                button
+                onClick={() => {
+                  handleDrawerClose();
+                  navigate('/login');
+                }}
+              >
+                <ListItemIcon>
+                  <LockOpenOutlined style={{ color: '#aaa' }} />
+                </ListItemIcon>
+                <ListItemText primary="Login" />
+              </ListItem>
+            </>
+          )}
+          {sessionStorage.getItem('userId') && (
+            <>
+              <ListItem
+                button
+                onClick={() => {
+                  handleDrawerClose();
+                  navigate(`/profiles/${sessionStorage.getItem('userId')}`);
+                }}
+              >
+                <ListItemIcon>
+                  <AccountCircleOutlined style={{ color: '#aaa' }} />
+                </ListItemIcon>
+                <ListItemText primary="Profile" />
+              </ListItem>
+              <ListItem
+                button
+                onClick={() => {
+                  handleDrawerClose();
+                  handleLogout();
+                }}
+              >
+                <ListItemIcon>
+                  <LockOutlined style={{ color: '#aaa' }} />
+                </ListItemIcon>
+                <ListItemText primary="Logout" />
+              </ListItem>
+            </>
+          )}
         </List>
       </Drawer>
     </div>
