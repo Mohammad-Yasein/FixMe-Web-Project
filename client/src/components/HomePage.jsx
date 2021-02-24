@@ -104,27 +104,13 @@ const HomePage = () => {
                       textAlign: 'center',
                     }}
                   >
-<<<<<<< HEAD
-                    <Typography gutterBottom variant="h5" component="h2">
-                      Trainer
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                      <div>Ghada Qaraeen</div>
-                      <div>
-                        Ghada is one of our highly-qualified trainers at FixMe. She is qualified to provide dietry plans along side training plans.
-                        Her speciality is weight-loss and muscule building. Ghada has helped many of our users to stay in shape, get fit and look fabulous.
-
-                      </div>
-                    </Typography>
-=======
                     <h3>Ghada Qaraeen</h3>
                     <h5 className="text-muted">Trainer</h5>
                     <div className="text-justify">
                       Ghada is one of our highly-qualified trainers at FixMe. She is qualified to provide
                       dietry plans along side training plans. Her speciality is weight-loss and muscule
-                      building.
+                      building. Ghada has helped many of our users to maintain and improve their health.
                     </div>
->>>>>>> 95eae4a970caea139bac9e0488e3a3f7827ef95d
                   </CardContent>
                 </CardActionArea>
               </Card>
