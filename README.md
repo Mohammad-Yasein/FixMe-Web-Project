@@ -13,6 +13,12 @@ as well as our high-quality workout guides. You can get customized meal and work
 2. In the **Profile** section, users can enter their **measurements** (hight, weight) and gender, to get their Body Mass Index (BMI) and Body Fat Perecentage (BFP).
 3. Users are also able to add their **comments** on the **articles** they read.
 
+
+**Technologies used to produce this project:**
+React, MongoDB, Socket.io, Material UI, Express, Node.js.
+
+
+
 **The aweasome developers who created this webapp:**
 
 - Mohammad Shanabli (Team Lead) [https://github.com/Mohammad-Yasein]
