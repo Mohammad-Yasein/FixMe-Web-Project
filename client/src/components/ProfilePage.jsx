@@ -109,14 +109,13 @@ const ProfilePage = () => {
                 </FormGroup>
                 <FormGroup className="mb-4">
                   <InputLabel>Age</InputLabel>
-                  <TextField type="number" id="age" value={age} onChange={e => setAge(e.target.value)} />
+                  <TextField type="number" id="age" onChange={e => setAge(e.target.value)} />
                 </FormGroup>
                 <FormGroup className="mb-4">
                   <InputLabel>Weight</InputLabel>
                   <TextField
                     type="number"
                     id="weight"
-                    value={weight}
                     InputProps={{
                       endAdornment: <InputAdornment position="end">Kg</InputAdornment>,
                     }}
@@ -128,7 +127,6 @@ const ProfilePage = () => {
                   <TextField
                     type="number"
                     id="height"
-                    value={height * 100}
                     InputProps={{
                       endAdornment: <InputAdornment position="end">cm</InputAdornment>,
                     }}

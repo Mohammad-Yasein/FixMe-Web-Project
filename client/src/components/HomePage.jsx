@@ -39,14 +39,18 @@ const HomePage = () => {
         <Container maxWidth="lg" className="home p-5">
           <h1 className="intro text-danger text-lg-left text-center">BE FiT</h1>
           <p style={{ fontSize: '20px' }} className="text-justify mb-5">
-          FixMe is a platform specialized in providing up-to-date advice on fitness and nutrition. 
-          You can browse through our well-written and highly-informative health articles, as well as our high-quality workout guides. 
-          You can get customized meal and workout plans based on your body measurements. Stay healthy and enjoy using FixMe.
-          <br/><br/>
-          This website has contributed to the well-being of many people, whether it was for weight-gain, weight-loss, muscle-gain or strength.  
-          You can be an absolute beginner with zero experience, or a professional athlete looking to reach your true potential, we can help!
-          <br/><br/>
-          Get your measurments and start your journey to health. Remember don't eat less, eat right!
+            FixMe is a platform specialized in providing up-to-date advice on fitness and nutrition. You can
+            browse through our well-written and highly-informative health articles, as well as our
+            high-quality workout guides. You can get customized meal and workout plans based on your body
+            measurements. Stay healthy and enjoy using FixMe.
+            <br />
+            <br />
+            This website has contributed to the well-being of many people, whether it was for weight-gain,
+            weight-loss, muscle-gain or strength. You can be an absolute beginner with zero experience, or a
+            professional athlete looking to reach your true potential, we can help!
+            <br />
+            <br />
+            Get your measurments and start your journey to health. Remember don't eat less, eat right!
           </p>
           <h1 className="intro text-danger text-lg-left text-center">Health Articles</h1>
           <Grid container>
@@ -89,17 +93,18 @@ const HomePage = () => {
               <Card className="mb-4" style={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
                 <CardActionArea>
                   <CardMedia
-                    image="../imgs/trainer1.jpg"
+                    image="../imgs/trainer.jpg"
                     style={{ height: '150px', borderRadius: '50%', margin: '10px 37%' }}
                   />
                   <CardContent
                     style={{
                       backgroundColor: 'white',
                       borderRadius: '5px',
-                      height: '175px',
+                      height: '200px',
                       textAlign: 'center',
                     }}
                   >
+<<<<<<< HEAD
                     <Typography gutterBottom variant="h5" component="h2">
                       Trainer
                     </Typography>
@@ -111,6 +116,15 @@ const HomePage = () => {
 
                       </div>
                     </Typography>
+=======
+                    <h3>Ghada Qaraeen</h3>
+                    <h5 className="text-muted">Trainer</h5>
+                    <div className="text-justify">
+                      Ghada is one of our highly-qualified trainers at FixMe. She is qualified to provide
+                      dietry plans along side training plans. Her speciality is weight-loss and muscule
+                      building.
+                    </div>
+>>>>>>> 95eae4a970caea139bac9e0488e3a3f7827ef95d
                   </CardContent>
                 </CardActionArea>
               </Card>
@@ -119,28 +133,25 @@ const HomePage = () => {
               <Card className="mb-4" style={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
                 <CardActionArea>
                   <CardMedia
-                    image="../imgs/trainer1.jpg"
+                    image="../imgs/nutritionist.jpg"
                     style={{ height: '150px', borderRadius: '50%', margin: '10px 37%' }}
                   />
                   <CardContent
                     style={{
                       backgroundColor: 'white',
                       borderRadius: '5px',
-                      height: '175px',
+                      height: '200px',
                       textAlign: 'center',
                     }}
                   >
-                    <Typography gutterBottom variant="h5" component="h2">
-                    Nutritionist
-                    </Typography>
-                    <Typography variant="body2" color="textSecondary" component="p">
-                      <div>Mahmoud Waked</div>
-                      <div>
-                        Mahmoud is a qualified Clinical Nutritionist. He has well-rounded experience working with 
-                        people of different needs. He provides professional and scientifically-proven nutritional advice and meal-plans. 
-                        Mahmoud believes in safety and steers away from trendy diets.
-                      </div>
-                    </Typography>
+                    <h3>Mahmoud Waked</h3>
+                    <h5 className="text-muted">Nutritionist</h5>
+                    <div className="text-justify">
+                      Mahmoud is a qualified Clinical Nutritionist. He has well-rounded experience working
+                      with people of different needs. He provides professional and scientifically-proven
+                      nutritional advice and meal-plans. Mahmoud believes in safety and steers away from
+                      trendy diets.
+                    </div>
                   </CardContent>
                 </CardActionArea>
               </Card>
