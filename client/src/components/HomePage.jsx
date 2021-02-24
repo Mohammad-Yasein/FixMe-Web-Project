@@ -107,7 +107,7 @@ const HomePage = () => {
                       <div>Ghada Qaraeen</div>
                       <div>
                         Ghada is one of our highly-qualified trainers at FixMe. She is qualified to provide dietry plans along side training plans.
-                        Her speciality is weight-loss and muscule building.
+                        Her speciality is weight-loss and muscule building. Ghada has helped many of our users to stay in shape, get fit and look fabulous.
 
                       </div>
                     </Typography>
