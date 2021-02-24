@@ -1,21 +1,29 @@
-.main-bg {
-    background: url('../assets/imgs/main-bg.jpg') no-repeat;
-    background-size: cover;
-    min-height: 100vh;
-  }
+.home-bg {
+  background: url('../assets/imgs/home-bg.jpg') center no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
 
-  .main-overlay {
-    background-color: rgba(0, 0, 0, 0.65);
-    min-height: 100vh;
-    padding: 10rem 0;
-  }
-  
-  .main {
-    /* background-color: rgba(200, 200, 200, 0.75);
-    
-    height: 100%; */
-    border-radius: 0.75rem;
-    background-color: rgba(200, 200, 200, 0.75); 
-    padding: 10px;
-  }
-  
+.home-overlay {
+  background-color: rgba(0, 0, 0, 0.75);
+  min-height: 100vh;
+  padding: 0 0 10rem;
+}
+
+.home {
+  background-color: rgba(255, 255, 255, 0.75);
+  border-radius: 0.75rem;
+  height: 100%;
+}
+
+.home-video {
+  margin-bottom: 5rem;
+  opacity: 0.95;
+  width: 100%;
+}
+
+.intro {
+  font-family: 'Anton', sans-serif;
+  margin-top: 75px;
+  margin-bottom: 25px;
+}

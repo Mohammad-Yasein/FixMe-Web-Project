@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { navigate } from '@reach/router';
 import axios from 'axios';
 
@@ -18,6 +18,10 @@ const RegistrationForm = () => {
   const [password, setPassword] = useState('');
   const [errors, setErrors] = useState([]);
 
+  useEffect(() => {
+    document.title = 'Sign Up';
+  }, []);
+
   const onSubmitHandler = e => {
     e.preventDefault();
 
@@ -32,6 +36,7 @@ const RegistrationForm = () => {
 
         console.log(response.data);
         sessionStorage.setItem('userId', userId);
+        sessionStorage.setItem('username', response.data.username);
         navigate(`/profiles/${userId}`);
       })
       .catch(error => {
@@ -75,7 +80,12 @@ const RegistrationForm = () => {
               <TextField id="email" label="Email" onChange={e => setEmail(e.target.value)} />
             </FormGroup>
             <FormGroup className="mb-4">
-              <TextField type="password" id="password" label="Password" onChange={e => setPassword(e.target.value)} />
+              <TextField
+                type="password"
+                id="password"
+                label="Password"
+                onChange={e => setPassword(e.target.value)}
+              />
             </FormGroup>
             <Box component="div" className="mb-5">
               <span className="text-muted">Already registered? </span>
