@@ -36,9 +36,8 @@ ArticleRoutes(app);
 server.listen(port, () => console.log('THE SERVER IS ALL FIRED UP ON PORT ' + port + ' ...'));
 
 io.on('connection', socket => {
-  console.log('CREATE NEW CONNECTION ...');
-  socket.on('comment', data => {
+  socket.on('addComment', data => {
     console.log('USER ADDED A COMMENT!');
-    socket.broadcast.emit(data);
+    socket.broadcast.emit('getComment', data);
   });
 });
