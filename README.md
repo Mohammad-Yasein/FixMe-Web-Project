@@ -23,6 +23,6 @@ as well as our high-quality workout guides. You can get customized meal and work
 
 - Ayat Ayyad [https://github.com/Ayat-Ayyad]
 
-#####Message from the developers:
+####Message from the developers:
 We are incredibly proud of this project, as we managed to work under great uncertinanty due to having two team members being affected by covid-19. 
 The team members demonstrated amazing team-work skills, highly-professional work ethics. All in all, each one of us recognizes the great value this project has allowed us to get.
