@@ -11,3 +11,12 @@ module.exports = database => {
     .then(() => console.log('ESTABLISHED A CONNECTION TO THE DATABASE ' + database.toUpperCase() + ' ...'))
     .catch(error => console.log('SOMETHING WENT WRONG WHEN CONNECTING TO THE DATABASE!', error));
 };
+
+
+
+
+
+
+
+
+
