@@ -39,14 +39,9 @@ const HomePage = () => {
         <Container maxWidth="lg" className="home p-5">
           <h1 className="intro text-danger text-lg-left text-center">BE FiT</h1>
           <p style={{ fontSize: '20px' }} className="text-justify mb-5">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat vel officiis asperiores
-            repellendus eum in laudantium ipsa, recusandae provident ad modi impedit eius error ducimus fugit
-            rem maxime et saepe quidem. Aut, itaque, nobis ipsam similique repellat unde, fugit sint dolorum
-            fuga eaque voluptatum nam tempore cumque facilis corrupti. Veniam possimus amet quidem consectetur
-            provident dolore saepe. Amet eaque animi blanditiis dolores consequatur corporis ea odit maxime ex
-            incidunt molestias provident nesciunt, nulla distinctio architecto perferendis dicta. Natus
-            quisquam nihil, perspiciatis consequatur aliquid exercitationem vero voluptas. Natus dolor quod
-            suscipit sed earum veniam doloribus maxime quasi. Eos perspiciatis ipsum suscipit.
+          FixMe is a platform specialized in providing up-to-date advice on fitness and nutrition. 
+          You can browse through our well-written and highly-informative health articles, as well as our high-quality workout guides. 
+          You can get customized meal and workout plans based on your body measurements. Stay healthy and enjoy using FixMe!
           </p>
           <h1 className="intro text-danger text-lg-left text-center">Health Articles</h1>
           <Grid container>
@@ -104,11 +99,11 @@ const HomePage = () => {
                       Trainer
                     </Typography>
                     <Typography variant="body2" color="textSecondary" component="p">
-                      <div>Lorem, ipsum.</div>
+                      <div>Ghada Qaraeen</div>
                       <div>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quos eaque, quia saepe dicta
-                        sequi facere, tenetur ut doloremque illum perferendis maiores ducimus vel voluptatum
-                        aliquid eum? Magnam optio architecto eveniet!
+                        Ghada is one of our highly-qualified trainers at FixMe. She is qualified to provide dietry plans along side training plans.
+                        Her speciality is weight-loss and muscule building.
+
                       </div>
                     </Typography>
                   </CardContent>

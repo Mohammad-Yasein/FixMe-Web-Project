@@ -36,22 +36,21 @@ const Footer = () => {
             <span className="web-title ml-2">FixMe Fitness</span>
           </Typography>
           <div>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Enim ipsum neque ad quidem maiores autem
-            illo amet possimus natus aspernatur itaque, consequuntur, molestiae voluptate odit! Repellat
-            maiores cum odio deleniti excepturi inventore! Dolores sunt cupiditate quae, voluptatem ad saepe
-            cum incidunt officia quidem hic magni distinctio, cumque molestiae sit! Facilis.
+          FixMe is a platform specialized in providing up-to-date advice on fitness and nutrition. 
+          You can browse through our well-written and highly-informative health articles, as well as our high-quality workout guides. 
+          You can get customized meal and workout plans based on your body measurements. Stay healthy and enjoy using FixMe!
           </div>
         </Grid>
         <Grid item lg={3} md={12} sm={12} xs={12} className="text-lg-left text-center px-5 pt-5">
           <h5 className="text-danger font-weight-bold mb-4">CONTACT US</h5>
           <Link component="button" className="mb-3">
             <BusinessOutlined color="primary" style={{ fontSize: '1.6rem' }} />
-            <span className="text-white ml-3">25 Lorem ipsum, dolor sit consectetur.</span>
+            <span className="text-white ml-3">Ramallah, Palestine.</span>
           </Link>
           <br />
           <Link component="button" className="mb-3">
             <PhoneOutlined color="primary" style={{ fontSize: '1.6rem' }} />
-            <span className="text-white ml-3">(555) 123-4567</span>
+            <span className="text-white ml-3">(02) 240-2983</span>
           </Link>
           <br />
           <Link component="button" className="mb-3">
@@ -75,7 +74,7 @@ const Footer = () => {
           </Link>
         </Grid>
         <Grid container style={{ borderTop: '#777 1px solid' }} className="mx-5 mt-5">
-          <div className="mx-auto p-4">Copyright &copy; 2020, All Rights Reserved</div>
+          <div className="mx-auto p-4">Copyright &copy; 2021, All Rights Reserved</div>
         </Grid>
       </Grid>
     </div>
