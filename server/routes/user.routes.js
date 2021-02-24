@@ -8,3 +8,4 @@ module.exports = app => {
   app.get('/api/users/:id', authenticate, UserController.getUserById);
   app.put('/api/users/:id', authenticate, UserController.updateUser);
 };
+
