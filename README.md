@@ -57,3 +57,7 @@ The team members demonstrated amazing team-work skills and highly-professional w
 
 **Full responsiveness**
 ![](responsive.gif)
+
+
+
+The video used is adapted from https://www.youtube.com/watch?v=nUH_e31knCk
