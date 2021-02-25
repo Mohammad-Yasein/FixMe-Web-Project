@@ -23,10 +23,33 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import CardContent from '@material-ui/core/CardContent';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 
+import { makeStyles } from '@material-ui/core/styles';
+import Stepper from '@material-ui/core/Stepper';
+import Step from '@material-ui/core/Step';
+import StepLabel from '@material-ui/core/StepLabel';
+import StepContent from '@material-ui/core/StepContent';
+import Paper from '@material-ui/core/Paper';
+
 import '../styles/ProfilePage.css';
 
 import gainData from '../assets/data/gainWeightPlan.json';
 import loseData from '../assets/data/loseWeightPlan.json';
+
+const useStyles = makeStyles(theme => ({
+  root: {
+    width: '100%',
+  },
+  button: {
+    marginTop: theme.spacing(1),
+    marginRight: theme.spacing(1),
+  },
+  actionsContainer: {
+    marginBottom: theme.spacing(2),
+  },
+  resetContainer: {
+    padding: theme.spacing(3),
+  },
+}));
 
 const ProfilePage = () => {
   const [gender, setGender] = useState('');
@@ -37,6 +60,28 @@ const ProfilePage = () => {
   const [display, setDisplay] = useState(false);
   const [data, setData] = useState([]);
   const [isActive, setIsActive] = useState(true);
+  const [isVertical, setIsVertical] = useState(false);
+
+  const resize = () => {
+    document.body.clientWidth > 1300 ? setIsVertical(false) : setIsVertical(true);
+  };
+
+  window.onresize = resize;
+
+  const classes = useStyles();
+  const [activeStep, setActiveStep] = React.useState(0);
+
+  const handleNext = () => {
+    setActiveStep(prevActiveStep => prevActiveStep + 1);
+  };
+
+  const handleBack = () => {
+    setActiveStep(prevActiveStep => prevActiveStep - 1);
+  };
+
+  const handleReset = () => {
+    setActiveStep(0);
+  };
 
   const doCalculations = data => {
     // BMI = Weight (kg) / Height (m)²
@@ -350,7 +395,7 @@ const ProfilePage = () => {
                       )}
                       {!isActive && (
                         <div className="p-4">
-                          {day.workouts.map((workout, idx) => {
+                          {/* {day.workouts.map((workout, idx) => {
                             return (
                               <React.Fragment key={idx}>
                                 {idx == 0 ? (
@@ -373,7 +418,61 @@ const ProfilePage = () => {
                                 )}
                               </React.Fragment>
                             );
-                          })}
+                          })} */}
+
+                          <div className={classes.root}>
+                            <h4 className="font-weight-bold text-uppercase text-success mb-4 ml-1">
+                              {day.workouts[0][`${Object.keys(day.workouts[0])[0]}`]}
+                            </h4>
+                            <Stepper
+                              activeStep={activeStep == 0 ? activeStep : activeStep - 1}
+                              orientation={isVertical ? 'vertical' : 'horizontal'}
+                            >
+                              {day.workouts.map(
+                                (workout, idx) =>
+                                  Object.keys(workout)[0] == 'Type' || (
+                                    <Step key={idx}>
+                                      <StepLabel>{`Exercise #${idx}`}</StepLabel>
+                                      <StepContent>
+                                        <Typography gutterBottom variant="h5" component="h2">
+                                          {Object.keys(workout)[0]}
+                                        </Typography>
+                                        <Typography variant="body2" color="textSecondary" component="p">
+                                          <div>{workout[`${Object.keys(workout)[0]}`]}</div>
+                                        </Typography>
+                                        <div className={classes.actionsContainer}>
+                                          <div>
+                                            <Button
+                                              disabled={activeStep === 0}
+                                              onClick={handleBack}
+                                              className={classes.button}
+                                            >
+                                              Back
+                                            </Button>
+                                            <Button
+                                              variant="contained"
+                                              color="primary"
+                                              onClick={handleNext}
+                                              className={classes.button}
+                                            >
+                                              {activeStep === day.workouts.length - 1 ? 'Finish' : 'Next'}
+                                            </Button>
+                                          </div>
+                                        </div>
+                                      </StepContent>
+                                    </Step>
+                                  )
+                              )}
+                            </Stepper>
+                            {activeStep === day.workouts.length && (
+                              <Paper square elevation={0} className={classes.resetContainer}>
+                                <Typography>All exercises completed - you&apos;re done</Typography>
+                                <Button onClick={handleReset} className={classes.button}>
+                                  Reset
+                                </Button>
+                              </Paper>
+                            )}
+                          </div>
                         </div>
                       )}
                     </Accordion>

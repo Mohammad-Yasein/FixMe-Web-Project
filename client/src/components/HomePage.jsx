@@ -87,14 +87,14 @@ const HomePage = () => {
                 );
               })}
           </Grid>
-          <h1 className="intro text-primary text-center mb-5">Our Trainers</h1>
+          <h1 className="intro text-primary text-center mb-5">Our Professionals</h1>
           <Grid container>
             <Grid item lg={6} md={12} sm={12} xs={12} className="px-2">
               <Card className="mb-4" style={{ backgroundColor: 'transparent', boxShadow: 'none' }}>
                 <CardActionArea>
                   <CardMedia
                     image="../imgs/trainer.jpg"
-                    style={{ height: '150px', borderRadius: '50%', margin: '10px 37%' }}
+                    style={{ height: '175px', borderRadius: '50%', margin: '10px 35%' }}
                   />
                   <CardContent
                     style={{
@@ -120,7 +120,7 @@ const HomePage = () => {
                 <CardActionArea>
                   <CardMedia
                     image="../imgs/nutritionist.jpg"
-                    style={{ height: '150px', borderRadius: '50%', margin: '10px 37%' }}
+                    style={{ height: '175px', borderRadius: '50%', margin: '10px 35%' }}
                   />
                   <CardContent
                     style={{
